@@ -15,7 +15,6 @@ NeuralNetwork::NeuralNetwork(int inputDimensions,
 
 	ip = new InputLayer(inputDimensions);
 
-
 	if(numberOfHiddenLayers<1){
 		throw new NeuralException("must have atleast 1 hidden layer");
 	}
