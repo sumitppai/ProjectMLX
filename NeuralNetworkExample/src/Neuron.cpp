@@ -7,16 +7,16 @@
 
 #include "Neuron.hpp"
 
-Neuron::Neuron(double (*actFn) (vector<double>),
-				double (*actFnDerv) (vector<double>)){
+Neuron::Neuron(double (*actFn) (double),
+				double (*actFnDerv) (double)){
 	//Initialize the neuron with the activation function and it's derivative
 	this->activationFunction = actFn;
 	this->activationFunctionDerivative = actFnDerv;
 
 }
 
-Neuron::Neuron(double (*actFn) (vector<double>),
-				double (*actFnDerv) (vector<double>),
+Neuron::Neuron(double (*actFn) (double),
+				double (*actFnDerv) (double),
 				vector<Neuron*> synInputs,
 				vector<double> synWeights){
 

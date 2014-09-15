@@ -21,11 +21,11 @@ public:
 	NeuralNetwork(int inputDimensions,
 					int numberOfHiddenLayers,
 					vector<int>& numberOfNeuronsInHiddenLayers,
-					double(*actvFn) (vector<double>) ,
-					double(*actvFnDerv) (vector<double>));
+					double(*actvFn) (double) ,
+					double(*actvFnDerv) (double));
 
 	virtual ~NeuralNetwork();
-	void train();
+	void train(string directoryPath);
 };
 
 #endif /* NEURALNETWORK_HPP_ */

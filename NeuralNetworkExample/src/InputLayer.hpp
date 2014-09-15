@@ -20,8 +20,8 @@ public:
 	InputLayer(int dim);
 
 	InputLayer(int numberOfNeurons,
-					double(*actvFn) (vector<double>) ,
-					double(*actvFnDerv) (vector<double>));
+					double(*actvFn) (double) ,
+					double(*actvFnDerv) (double));
 
 	void feedInput(vector<double> input);
 

@@ -10,9 +10,13 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <stdio.h>
 #include "NeuralException.hpp"
 #include <stdlib.h>
 #include <time.h>
+#include <cmath>
+#include <fstream>
+
 using namespace std;
 
 

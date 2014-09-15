@@ -8,8 +8,8 @@
 #include "HiddenLayer.hpp"
 
 HiddenLayer::HiddenLayer(int numberOfNeurons,
-							vector<double (*) (vector<double>)> actvFns,
-							vector<double (*) (vector<double>)> actvFnDervs
+							vector<double (*) (double)> actvFns,
+							vector<double (*) (double)> actvFnDervs
 							){
 
 	if(actvFns.size()!=numberOfNeurons || actvFnDervs.size()!=numberOfNeurons){
@@ -24,8 +24,8 @@ HiddenLayer::HiddenLayer(int numberOfNeurons,
 
 
 HiddenLayer::HiddenLayer(int numberOfNeurons,
-				double(*actvFn) (vector<double>) ,
-				double(*actvFnDerv) (vector<double>)){
+				double(*actvFn) (double) ,
+				double(*actvFnDerv) (double)){
 
 	for(int i=0; i<numberOfNeurons; ++i){
 			this->neurons.push_back(new Neuron(actvFn, actvFnDerv));

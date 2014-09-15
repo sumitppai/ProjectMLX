@@ -18,13 +18,13 @@ private:
 public:
 
 	HiddenLayer(int numberOfNeurons,
-				vector<double (*) (vector<double>)> actvFns,
-				vector<double (*) (vector<double>)> actvFnDervs
+				vector<double (*) (double)> actvFns,
+				vector<double (*) (double)> actvFnDervs
 				);
 
 	HiddenLayer(int numberOfNeurons,
-				double(*actvFn) (vector<double>) ,
-				double(*actvFnDerv) (vector<double>));
+				double(*actvFn) (double) ,
+				double(*actvFnDerv) (double));
 
 	void connect(Layer* nextLayer);
 

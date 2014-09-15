@@ -8,8 +8,8 @@
 #include "OutputLayer.hpp"
 
 OutputLayer::OutputLayer(int numberOfNeurons,
-							vector<double (*) (vector<double>)> actvFns,
-							vector<double (*) (vector<double>)> actvFnDervs
+							vector<double (*) (double)> actvFns,
+							vector<double (*) (double)> actvFnDervs
 							){
 
 	if(actvFns.size()!=numberOfNeurons || actvFnDervs.size()!=numberOfNeurons){
@@ -23,8 +23,8 @@ OutputLayer::OutputLayer(int numberOfNeurons,
 }
 
 OutputLayer::OutputLayer(int numberOfNeurons,
-				double(*actvFn) (vector<double>) ,
-				double(*actvFnDerv) (vector<double>)){
+				double(*actvFn) (double) ,
+				double(*actvFnDerv) (double)){
 
 	for(int i=0; i<numberOfNeurons; ++i){
 			this->neurons.push_back(new Neuron(actvFn, actvFnDerv));

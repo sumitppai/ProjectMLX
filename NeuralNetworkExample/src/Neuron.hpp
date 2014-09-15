@@ -16,17 +16,17 @@ private:
 	vector<Neuron*> synapticInputs;
 	vector<double> synapticWeights;
 	double axonalOutput;
-	double (*activationFunction) (vector<double>);
-	double (*activationFunctionDerivative) (vector<double>);
+	double (*activationFunction) (double);
+	double (*activationFunctionDerivative) (double);
 	friend class InputLayer;
 public:
 	Neuron();
 
-	Neuron(double (*actFn) (vector<double>),
-			double (*actFnDerv) (vector<double>));
+	Neuron(double (*actFn) (double),
+			double (*actFnDerv) (double));
 
-	Neuron(double (*actFn) (vector<double>),
-			double (*actFnDerv) (vector<double>),
+	Neuron(double (*actFn) (double),
+			double (*actFnDerv) (double),
 			vector<Neuron*> synapticInputs,
 			vector<double> synapticWeights);
 

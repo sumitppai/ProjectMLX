@@ -16,8 +16,8 @@ InputLayer::InputLayer(int dims) {
 }
 
 InputLayer::InputLayer(int numberOfNeurons,
-				double(*actvFn) (vector<double>) ,
-				double(*actvFnDerv) (vector<double>)){
+				double(*actvFn) (double) ,
+				double(*actvFnDerv) (double)){
 
 	for(int i=0; i<numberOfNeurons; ++i){
 			this->neurons.push_back(new Neuron(actvFn, actvFnDerv));

@@ -8,10 +8,10 @@
 #include "NeuralNetwork.hpp"
 
 NeuralNetwork::NeuralNetwork(int inputDimensions,
-								int numberOfHiddenLayers,
-								vector<int>& numberOfNeuronsInHiddenLayers,
-								double(*actvFn) (vector<double>) ,
-								double(*actvFnDerv) (vector<double>)) {
+		int numberOfHiddenLayers,
+		vector<int>& numberOfNeuronsInHiddenLayers,
+		double(*actvFn) (double) ,
+		double(*actvFnDerv) (double)) {
 
 	ip = new InputLayer(inputDimensions);
 
@@ -39,5 +39,27 @@ NeuralNetwork::NeuralNetwork(int inputDimensions,
 
 NeuralNetwork::~NeuralNetwork() {
 	// TODO Auto-generated destructor stub
+}
+
+void NeuralNetwork::train(string directoryPath){
+
+	ifstream inFile;
+	size_t size = 0;
+
+	inFile.open(directoryPath.c_str(), ios::in);
+	unsigned char ch;
+	int i=0;
+	if(inFile.is_open()) {
+		while(!inFile.eof()){
+			inFile>>ch;
+			cout<<ch<<" ";
+			if(i%28==0) cout<<endl;
+			if(i==28*28*50) break;
+			i++;
+		}
+	}
+
+	inFile.close();
+
 }
 
